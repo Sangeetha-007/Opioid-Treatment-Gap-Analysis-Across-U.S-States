@@ -3,6 +3,10 @@ import numpy as np
 import openpyxl
 
 
-dataframe1 = pd.read_excel('/Users/sangeetha/Downloads/SUDORS-Fatal-Overdose-Data.xlsx', sheet_name='Data')
+df = pd.read_excel('/Users/sangeetha/Downloads/SUDORS-Fatal-Overdose-Data.xlsx', sheet_name='Data')
+#print(df[df['Jurisdiction'] == 'Overall'])
 
-print(dataframe1)
+#Filtering out Overall data
+df_filtered = df[df['Jurisdiction'] != 'Overall']
+
+print(df_filtered)
