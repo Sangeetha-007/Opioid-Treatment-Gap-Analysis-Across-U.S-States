@@ -3,6 +3,7 @@ import numpy as np
 import openpyxl
 import plotly.express as px
 import us
+import os
 import plotly.io as pio
 pio.renderers.default = 'browser'
 
@@ -43,3 +44,6 @@ fig = px.choropleth(df_2023,
                         color_continuous_scale="Viridis_r", # Choose a color scale
                         title="Opioid Rate Per State in 2023")
 fig.show() 
+os.makedirs("Visualization", exist_ok=True)
+fig.write_html("Visualization/opioid_map_2023.html")
+
