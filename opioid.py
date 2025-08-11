@@ -47,3 +47,13 @@ fig.show()
 os.makedirs("Visualization", exist_ok=True)
 fig.write_html("Visualization/opioid_map_2023.html")
 
+df2=pd.read_csv("/Users/sangeetha/Downloads/VSRR_Provisional_Drug_Overdose_Death_Counts.csv")
+print(df2.head())
+
+print(df2.isnull())
+
+df_filtered2= df2[df2["Indicator"]=='Opioids (T40.0-T40.4,T40.6)']
+#6344 
+#76860 
+print(df_filtered2.head())
+
